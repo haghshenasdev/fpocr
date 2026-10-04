@@ -1,17 +1,32 @@
-# fpocr
+# OCR فارسی — Flutter / Android
 
-A new Flutter project.
+پورت Flutter از پروژه Persian-OCR-App 1.7.0.
 
-## Getting Started
+## قابلیت‌ها
 
-This project is a starting point for a Flutter application.
+- OCR فارسی/عربی روی خود دستگاه با ONNX Runtime و PP-OCRv5.
+- دانلود مدل‌ها از داخل خود برنامه و نگهداری در Application Support.
+- بررسی SHA-256 مدل‌های رسمی RapidOCR قبل از فعال‌سازی.
+- انتخاب عکس از گالری یا دوربین.
+- انتخاب PDF و OCR صفحه اول به عنوان مسیر پایه PDF.
+- حالت سریع/دقیق.
+- ویرایش نتیجه، کپی و ذخیره TXT/PDF.
+- گزارش خطا و وضعیت مدل‌ها داخل برنامه.
+- Android API 24+ و ABIهای استاندارد Flutter/ONNX Runtime.
 
-A few resources to get you started if this is your first Flutter project:
+## اجرا
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+```bash
+flutter pub get
+flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+در اولین اجرا از آیکون «مدیریت مدل‌ها» مدل‌ها را دانلود کنید. بعد از دانلود، OCR بدون اینترنت اجرا می‌شود.
+
+## نکته مدل
+
+مدل تشخیص متن PP-OCRv5 و مدل recognition عربی/فارسی از RapidOCR انتخاب شده‌اند. مدل recognition عربی RapidOCR زبان‌های Arabic/Persian و چند زبان خط عربی را پوشش می‌دهد.
+
+## محدودیت نسخه اول پورت
+
+قابلیت Snip سراسری Windows (`Win+Shift+D`) مخصوص دسکتاپ است و در Android معادل مستقیمی ندارد؛ در Android مسیر ورودی اصلی دوربین/گالری/فایل است.
