@@ -1,0 +1,12 @@
+مراحل جایگذاری:
+
+1) پوشه lib را با lib پروژه ادغام کنید.
+2) assets/models را بسازید/ادغام کنید.
+3) download_models.ps1 را اجرا کنید.
+4) dependency های pubspec_ocr_additions.yaml را به pubspec.yaml اضافه کنید.
+5) flutter clean
+6) flutter pub get
+7) import 'package:YOUR_PACKAGE/persian_ocr.dart';
+8) PersianOcr().recognizeBytes(await File(path).readAsBytes())
+
+نکته: این بسته فایل باینری ONNX را داخل ZIP ندارد؛ اسکریپت دانلود آن را می‌گیرد. دلیل آن این است که محیط ساخت فعلی دسترسی مستقیم به مخزن مدل برای قراردادن فایل‌های چند مگابایتی داخل ZIP ندارد و نمی‌خواهم فایل LFS ناقص را به‌جای مدل واقعی تحویل بدهم.
